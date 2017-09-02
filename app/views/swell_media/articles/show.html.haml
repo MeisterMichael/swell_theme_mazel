@@ -1,5 +1,160 @@
 - cache( @media, expires_in: 1.hour ) do
-	.container
+	/ CONTENT -------------------------------------------------------------------------------
+	/ Intro Section
+	%section.inner-intro.dark-bg.bg-image.overlay-dark.parallax.parallax-background1{"data-background-img" => "img/full/21.jpg"}
+		.container
+			.row.title
+				%h2.h2 Blog
+				.page-breadcrumb
+					%a> Home
+					\/
+					%a> Blog
+					\/
+					%span Image Post
+	/ End Intro Section
+	/ Blog Post Section
+	%section.ptb.ptb-sm-80
+		.container
+			.row
+				/ Post Bar
+				.col-lg-9.col-md-9.blog-post-hr
+					.blog-post.mb-30
+						.post-meta
+							%span
+								by
+								= succeed "," do
+									%a John Doe
+							%span March 16, 2015
+						.post-header
+							%h2 Maecenas nec odio ante varcy tincidunt.
+						.post-media
+							%img{:alt => "", :src => "img/full/28.jpg"}/
+						.post-entry
+							%p Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+							%p similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+							%blockquote
+								We're not leaving here without Buster, man. Leave no crash-test dummy behind nihil impedit quo minus id quod maxime placeat facere!
+							%p.lead Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+							%ul
+								%li Excepturi sint occaecati cupiditate
+								%li Molestias excepturi sint
+								%li Similique sunt in culpa qui officia
+								%li Deserunt mollitia animi
+							%p similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+						.post-tag.pull-left
+							%span
+								%a> Branding
+								,
+							%span
+								%a Design
+					%hr/
+					.post-author
+						.post-author-img.pull-left
+							%img{:alt => "author", :src => "img/user-av.jpg"}/
+						.post-author-details.pull-left
+							%h6 John Doe
+							%ul.social
+								%li
+									%a{:href => "https://www.facebook.com/", :target => "_blank"}
+										%i.fa.fa-facebook
+								%li
+									%a{:href => "https://www.twitter.com/", :target => "_blank"}
+										%i.fa.fa-twitter
+								%li
+									%a{:href => "https://www.dribbble.com/", :target => "_blank"}
+										%i.fa.fa-dribbble
+								%li
+									%a{:href => "https://www.pinterest.com/", :target => "_blank"}
+										%i.fa.fa-pinterest
+								%li
+									%a{:href => "https://www.behance.net/", :target => "_blank"}
+										%i.fa.fa-behance
+					%hr/
+					.clearfix
+					.post-comment.mtb-30
+						%h4
+							Comments
+							%span.comment-numb (2)
+						%ul.comment-list.mt-30
+							%li
+								.comment-avatar
+									%img{:src => "img/user-av.jpg"}/
+								%div
+									.comment-detail
+										%h6 John Doe
+										.post-meta
+											%span March 16, 2015
+											|
+											%span
+												%a.comment-reply-btn
+													%i.fa.fa-reply>
+													Reply
+										%p Blandit vel, luctus pulvinar hendrerit id Maecenas tempus tellus eget lorem.
+									.comment-reply
+										.comment-avatar
+											%img{:src => "img/user-av.jpg"}/
+										%div
+											.comment-detail
+												%h6 John Doe
+												.post-meta
+													%span March 16, 2015
+													|
+													%span
+														%a.comment-reply-btn
+															%i.fa.fa-reply>
+															Reply
+												%p Blandit vel, luctus pulvinar hendrerit id Maecenas tempus tellus eget lorem.
+									.comment-reply
+										.comment-avatar
+											%img{:src => "img/user-av.jpg"}/
+										%div
+											.comment-detail
+												%h6 John Doe
+												.post-meta
+													%span March 16, 2015
+													|
+													%span
+														%a.comment-reply-btn
+															%i.fa.fa-reply>
+															Reply
+												%p Blandit vel, luctus pulvinar hendrerit id Maecenas tempus tellus eget lorem.
+							%li
+								.comment-avatar
+									%img{:src => "img/user-av.jpg"}/
+								%div
+									.comment-detail
+										%h6 John Doe
+										.post-meta
+											%span March 16, 2015
+											|
+											%span
+												%a.comment-reply-btn
+													%i.fa.fa-reply>
+													Reply
+										%p Blandit vel, luctus pulvinar hendrerit id Maecenas tempus tellus eget lorem.
+					.mtb-60
+						%h4 Leave a comment
+						.row.mt-30
+							%form.container
+								.row
+									.col-md-4
+										%input#name.input-lg.form-full{:name => "name", :placeholder => "Name", :required => "", :type => "text", :value => ""}/
+									.col-md-4
+										%input#email2.input-lg.form-full{:name => "email", :placeholder => "Email", :required => "", :type => "email", :value => ""}/
+									.col-md-4
+										%input#website.input-lg.form-full{:name => "website", :placeholder => "Website", :required => "", :type => "text", :value => ""}/
+									.col-md-12
+										%textarea#message.form-full{:name => "message", :placeholder => "Message", :required => ""}
+									.col-md-12
+										%button.btn.btn-lg.btn-black Post
+				/ End Post Bar
+				= render 'side_bar'
+	/ End Blog Post Section
+	= render 'next_prev_bar'
+	/ End CONTENT ----------------------------------------------------------------------------
+
+
+	-# .container
 		.row
 			/ article
 			.col-md-8.col-md-offset-2
@@ -233,5 +388,3 @@
 			/ .col-md-8
 		/ .row
 	/ .container
-
-
