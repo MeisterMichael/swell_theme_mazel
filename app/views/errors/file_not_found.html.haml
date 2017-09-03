@@ -1,38 +1,20 @@
-.container
-	.row
-		/ article
-		.col-md-10.col-md-offset-1
-			.site-entry
-				%article.post.format-standard.hentry
-					.entry-header
-						%h1.entry-title Not Found.
-					/ .entry-header
-					.entry-content
-						.row
-							.col-md-8.col-md-offset-2.text-center
-								%h5.text-upper OOPS! THAT PAGE CAN’T BE FOUND.
-								%p It looks like nothing was found at this location. Maybe try one of the links below or a one of another keyword to search.
-								= form_tag swell_media.category_path( :all ), method: :get, class: 'search-form' do
-									.form-group
-										%label.sr-only{:for => "search"} Search
-										= text_field_tag :q, '', :placeholder => "Search...", class: 'form-control search-field'
-									/ .form-group
-									%button.btn.btn-default.search-submit{:type => "submit"}
-										%i.fa.fa-search
-								/ .search-form
-								%section.widget.widget_tag_cloud
-									%h2.widget-title
-										%span Tags
-									.tagcloud
-										- SwellMedia::Article.published.media_tag_cloud( limit: 7 ).each do |tag,count|
-											%a{:href => swell_media.category_path( :all, tag: tag ) }
-												= tag
-												%span=count
-							/ .col-##
-						/ .row
-					/ .entry-content
-				/ .post
-			/ .site-entry
-		/ .col-md-8
-	/ .row
-/ .container
+/ CONTENT -------------------------------------------------------------------------------
+/ Intro
+%section#intro.intro
+	/ Static Intro
+	.bg-image.parallax.parallax-background2
+		.full-screen-intro.container{:style => "min-height: 400px;"}
+			.intro-content
+				.intro-content-inner
+					%h1.large.mb-25 404 Error
+					%p.lead.content-wd650
+						We're sorry but the page you Looking for can not be found.
+						%br/
+						Here are some other pages.
+					%br/
+					%a.btn.btn-md.btn-black{:href => swell_media.root_path()}
+						%i.fa.fa-angle-left.left>
+						Back To Home
+	/ End Static Intro
+/ End Intro
+/ End CONTENT ----------------------------------------------------------------------------

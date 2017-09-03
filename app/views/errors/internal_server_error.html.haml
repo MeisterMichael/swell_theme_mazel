@@ -1,9 +1,19 @@
 
-.container
-	.row
-		.col-sm-12
-			.dialog{ style: 'height: 80vh' }
-				%div
-					%h2 We're sorry, but something went wrong.
-
-				
+/ CONTENT -------------------------------------------------------------------------------
+/ Intro
+%section#intro.intro
+	/ Static Intro
+	.bg-image.parallax.parallax-background2
+		.full-screen-intro.container{:style => "min-height: 400px;"}
+			.intro-content
+				.intro-content-inner
+					%h1.large.mb-25 404 Error
+					%p.lead.content-wd650
+						We're sorry, but something went wrong.
+					%br/
+					%a.btn.btn-md.btn-black{:href => swell_media.root_path()}
+						%i.fa.fa-angle-left.left>
+						Back To Home
+	/ End Static Intro
+/ End Intro
+/ End CONTENT ----------------------------------------------------------------------------
