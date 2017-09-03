@@ -34,7 +34,7 @@
 				.border-box
 					%h4 Create an account
 					%p Please enter your email address to create an account.
-					= form_for resource, as: resource_name, url: swell_media.user_registration_path(), role: :form do |f|
+					= form_for resource, as: resource_name, url: main_app.user_registration_path(), role: :form do |f|
 
 						-# %a.auth-pop.btn.btn-primary.btn-facebook.col-xs-12{ href: main_app.user_facebook_omniauth_authorize_path( ga_client_id: ':ga_client_id' ) }
 							%i.fa.fa-facebook
