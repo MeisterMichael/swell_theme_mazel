@@ -1,7 +1,7 @@
 - cache( @media, expires_in: 1.hour ) do
 	/ CONTENT -------------------------------------------------------------------------------
 	/ Intro Section
-	%section.inner-intro.dark-bg.bg-image.overlay-dark.parallax.parallax-background1{"data-background-img" => "img/full/21.jpg"}
+	%section.inner-intro.dark-bg.bg-image.overlay-dark.parallax.parallax-background1{"data-background-img" => ( @media.cover_image.present? ? @media.cover_image : nil ) || "img/full/21.jpg"}
 		.container
 			.row.title
 				%h2.h2 Blog
@@ -10,7 +10,7 @@
 					\/
 					%a{ href: swell_media.articles_path() }> Blog
 					\/
-					%span Image Post
+					%span Post
 	/ End Intro Section
 	/ Blog Post Section
 	%section.ptb.ptb-sm-80
@@ -29,7 +29,7 @@
 						.post-header
 							%h2=@media.title
 						.post-media
-							%img{:alt => "", :src => @media.cover_image || @media.avatar}/
+							%img{:alt => "", :src => @media.avatar}/
 						.post-entry.fr-view
 							= raw @media.content
 						.post-tag.pull-left
