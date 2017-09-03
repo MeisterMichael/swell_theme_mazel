@@ -6,9 +6,16 @@
 		.row.title
 			%h2.h2 Blog
 			.page-breadcrumb
-				%a{ href: root_path() } Home
+				%a{ href: swell_media.root_path() } Home
 				\/
-				%span Blog
+				- if @tagged.present?
+
+					%a{ href: swell_media.articles_path() } Blog
+					\/
+					%span=@tagged
+				- else
+					%span Blog
+
 / End Intro Section
 / Blog Post Section
 %section.ptb.ptb-sm-80

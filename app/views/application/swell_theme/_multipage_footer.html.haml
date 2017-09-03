@@ -56,7 +56,7 @@
 			.col-md-3.col-sm-6.mb-sm-30
 				%ul.link
 					%li
-						%a{:href => "contact-1.html"} Contact Us
+						%a{:href => swell_media.new_contact_path() } Contact Us
 					%li
 						%a{:href => "shop-checkout.html"} Shopping Cart
 					%li
@@ -80,14 +80,14 @@
 		%section.copyright.ptb-60
 			.container
 				%p
-					\© 2015
+					\© #{Time.current.year}
 					= succeed "." do
-						%a
-							%b Mazel Template
+						%a{ href: swell_media.root_url }
+							%b #{SwellMedia.app_name}
 					%br/
-					Template	by
-					%a{:href => "http://nileforest.com/", :target => "_blank"}
-						%b nileforest
+					Lovingly crafted by
+					%a{:href => "http://www.groundswellenterprises.com/", :target => "_blank"}
+						%b Groundswell Enterprises
 		/ End Copyright Bar
 	/ END FOOTER
 	/ Scroll Top

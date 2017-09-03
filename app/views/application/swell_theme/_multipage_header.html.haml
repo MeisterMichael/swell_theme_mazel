@@ -5,8 +5,8 @@
 		/ Logo
 		.logo
 			%a{:href => swell_media.root_path() }
-				%img.logo-light{:alt => "Mazel", :src => image_path("app_theme/theme/general/img/logo-white.png")}/
-				%img.logo-dark{:alt => "Mazel", :src => image_path("app_theme/theme/general/img/logo-black.png")}/
+				%img.logo-light{:alt => "#{SwellMedia.app_name}", :src => image_path("app_theme/theme/general/img/logo-white.png")}/
+				%img.logo-dark{:alt => "#{SwellMedia.app_name}", :src => image_path("app_theme/theme/general/img/logo-black.png")}/
 		/ End Logo
 		/ Rightside Menu (Search, Cart, Bart icon)
 		.side-menu-btn
@@ -108,7 +108,7 @@
 								%i.fa.fa-angle-right
 							%ul.sub-dropdown
 								%li
-									%a{:href => "contact-1.html"} Contact 1
+									%a{:href => swell_media.new_contact_path() } Contact 1
 								%li
 									%a{:href => "contact-2.html"} Contact 2
 								%li

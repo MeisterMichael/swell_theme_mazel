@@ -30,3 +30,6 @@
 //= require app_theme/theme/general/js/plugin/sidebar-menu.js
 //= require app_theme/theme/general/js/theme.js
 //= require app_theme/theme/general/js/navigation.js
+//= require app_theme/theme/general/js/plugin/jquery.singlePageNav.js
+//= require app_theme/custom/multipage.js
+//= require app_theme/custom/theme.js

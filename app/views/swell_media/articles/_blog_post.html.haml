@@ -27,15 +27,16 @@
 	.post-header
 		%h5
 			%a{:href => media.url}=media.title
-	.post-entry
-		= raw media.description
-	.post-tag.pull-left
-		- media.tags.each do |tag|
-			%span
-				%a>=tag
-				- unless tag == media.tags.last
-					,
-	.post-more-link.pull-right
-		%a{:href => media.url }
-			Read More
-			%i.fa.fa-long-arrow-right.right
+	- unless args[:mode] == :thumb
+		.post-entry
+			= raw media.description
+		.post-tag.pull-left
+			- media.tags.each do |tag|
+				%span
+					%a{ href: swell_media.articles_path( tagged: tag ) }>=tag
+					- unless tag == media.tags.last
+						,
+		.post-more-link.pull-right
+			%a{:href => media.url }
+				Read More
+				%i.fa.fa-long-arrow-right.right

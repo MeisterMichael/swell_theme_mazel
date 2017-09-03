@@ -1,11 +1,11 @@
 / Sidebar
 .col-lg-3.col-md-3.mt-sm-30
-	.sidebar-widget
+	-# .sidebar-widget
 		%h5 Search
 		.widget-search
 			%input#wid-search.form-full.input-lg{:name => "search", :placeholder => "Search Here", :type => "text", :value => ""}/
 			%input#wid-s-sub{:name => "email", :type => "submit", :value => ""}/
-	.sidebar-widget
+	-# .sidebar-widget
 		%h5 Categories
 		%hr/
 		%ul
@@ -23,50 +23,27 @@
 				%a Agency
 			%li
 				%a Portfolio
-	.sidebar-widget
-		%h5 Recent Post
-		%hr/
-		%ul.widget-post
-			%li
-				%a.widget-post-media
-					%img{:src => "img/portfolio/21.jpg"}/
-				.widget-post-info
-					%h6
-						%a veritatis et quasi
-					.post-meta
-						%span March 16, 2015
-			%li
-				%a.widget-post-media
-					%img{:src => "img/portfolio/32.jpg"}/
-				.widget-post-info
-					%h6
-						%a Sed fringilla mauris
-					.post-meta
-						%span March 09, 2015
-			%li
-				%a.widget-post-media
-					%img{:src => "img/portfolio/31.jpg"}/
-				.widget-post-info
-					%h6
-						%a harum quidem rerum
-					.post-meta
-						%span March 04, 2015
-	.sidebar-widget
-		%h5 popular Tags
-		%hr/
-		%ul.widget-tag
-			%li
-				%a Art
-			%li
-				%a Business
-			%li
-				%a Design
-			%li
-				%a Graphic
-			%li
-				%a fashion
-			%li
-				%a Model
-			%li
-				%a Photography
+	- if ( recent_articles = SwellMedia::Article.published.where.not( id: @media.try(:id) ).order(publish_at: :desc).limit(3) ).present?
+		.sidebar-widget
+			%h5 Recent Post
+			%hr/
+			%ul.widget-post
+				- recent_articles.each do |media|
+					%li
+						%a.widget-post-media{ href: media.url }
+							%img{:src =>  media.avatar }/
+						.widget-post-info
+							%h6
+								%a{ href: media.url }=media.title
+							.post-meta
+								%span=media.publish_at.strftime('%B %e, %Y')
+	- if ( tag_cloud = SwellMedia::Article.published.media_tag_cloud( limit: 7 ) ).present?
+
+		.sidebar-widget
+			%h5 popular Tags
+			%hr/
+			%ul.widget-tag
+				- tag_cloud.each do |tag,count|
+					%li
+						%a{ href: swell_media.articles_path( tagged: tag ) }= tag
 / End Sidebar

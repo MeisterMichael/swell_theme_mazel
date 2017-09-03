@@ -1,35 +1,15 @@
 / Footer Section
-%footer#footer.footer.section-padding.gray-bg
+%footer#footer.footer.section-padding.gray-bg.ptb.ptb-sm-80
 	.container.text-center
-		/ Footer Logo
-		.footer-logo.mb-25.wow.fadeInUp{"data-wow-duration" => "1.5s"}
-			%a.scroll-top{:href => "#intro"}
-				%img{:alt => "mazel", :src => image_path("app_theme/theme/onepage/img/logo-dark.png")}/
-		/ End Footer Logo
 		/ Copyright
 		%p.copyright.mb-25
-			© 2015
+			© #{Time.current.year}
 			= succeed "." do
-				%a
-					%b Mazel Template
+				%a{ href: swell_media.root_url }
+					%b #{SwellMedia.app_name}
 			%br/
-			Template by
-			%a{:href => "http://nileforest.com/", :target => "_blank"}
-				%b nileforest
+			Lovingly crafted by
+			%a{:href => "http://www.groundswellenterprises.com/", :target => "_blank"}
+				%b Groundswell Enterprises
 		/ Copyright
-		/ Social
-		%ul.social
-			%li
-				%a{:href => "https://www.facebook.com/", :target => "_blank"}
-					%i.fa.fa-facebook
-			%li
-				%a{:href => "https://www.twitter.com/", :target => "_blank"}
-					%i.fa.fa-twitter
-			%li
-				%a{:href => "https://www.linkedin.com/", :target => "_blank"}
-					%i.fa.fa-linkedin
-			%li
-				%a{:href => "https://plus.google.com/", :target => "_blank"}
-					%i.fa.fa-google-plus
-		/ End Social
 / End Footer Section

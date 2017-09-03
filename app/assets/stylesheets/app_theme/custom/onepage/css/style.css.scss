@@ -3020,11 +3020,15 @@ ul.portfolio-btn-wraper, .portfolio-btn-wraper {
 }
 
     .blog-post .post-media {
+		display: block;
         position: relative;
         overflow: hidden;
         margin-bottom: 25px;
     }
 
+        .blog-post .post-media img {
+            max-width: 100%;
+        }
         .blog-post .post-media iframe {
             width: 100%;
         }

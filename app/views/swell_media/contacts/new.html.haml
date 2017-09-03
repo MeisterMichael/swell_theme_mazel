@@ -1,61 +1,49 @@
 - cache( 'contacts#new' ) do
-	.container
-		.row
-			/ article
-			.col-md-8.col-md-offset-2
-				.site-entry
-					%article.post.format-standard.hentry
-						.entry-header
-							%h1.entry-title Contact
-						/ .entry-header
-						.entry-content
-							= render 'application/social_icons', args: { class: 'text-center' }
-							%p.text-center Fill out the form below with some info about you and the question you want ask.
-							= form_for @contact, html: { class: 'form-horizontal' } do |f|
-								.form-group
-									.col-sm-6
-										= f.label :subject, 'Name'
-										= f.text_field :subject, class: 'form-control form-bordered'
-									.col-sm-6
-										= f.label :email
-										= f.text_field :email, class: 'form-control form-bordered'
-								.form-group
-									.col-sm-12
-										= f.label :message
-										= f.text_area :message, rows: 8, class: 'form-control form-bordered'
-								.form-group
-									.col-sm-12
-										%button{:type => "submit"} Submit
-							/ .form-horizontal
-						/ .entry-content
-					/ .post
-				/ .site-entry
-			/ .col-md-9
-		/ .row
-	/ .container
+	/ CONTENT -------------------------------------------------------------------------------
+	/ Intro Section
+	%section.inner-intro.bg-image.overlay-light.parallax.parallax-background1{"data-background-img" => asset_path("app_theme/theme/general/img/full/02.jpg")}
+		.container
+			.row.title
+				%h2.h2 Contact Us
+				.page-breadcrumb
+					%a{ href: swell_media.root_path() }> Home
+					\/
+					%span Contact
+	.clearfix
+	/ End Intro Section
+	/ Contact Section
+	%section.ptb.ptb-sm-80
+		.container
+			.row
+				.col-md-6.offset-md-3.text-center
+					%h3 Keep In Touch
+					%p.lead Have a question, suggestion, or just interested in learning more, well then drop us a line and we can get to conversing.  
+			.spacer-75
+			.row
+				.col-md-6.offset-md-3
+					/ Contact FORM
+					= form_for @contact, html: { id: 'contact-form', class: 'contact-form' } do |f|
+						/ IF MAIL SENT SUCCESSFULLY
+						%h6.successContent
+							%i.fa.fa-check.left{:style => "color: #5cb45d;"}>
+							Your message has been sent successfully.
+						/ END IF MAIL SENT SUCCESSFULLY
+						/ MAIL SENDING UNSUCCESSFULL
+						%h6.errorContent
+							%i.fa.fa-exclamation-circle.left{:style => "color: #e1534f;"}>
+							There was a problem validating the form please check!
 
-	-#.container
-		.row
-			.col-sm-8
+						/ END MAIL SENDING UNSUCCESSFULL
 
-				%h3.headline.first-child
-					%span
-						Contact
-				%p
-					We'd love to hear from you!
-
-				= form_for @contact do |f|
-					.form-group
-						= f.label :email
-						= f.text_field :email, placeholder: 'Your Email', class: 'form-control'
-					.form-group
-						= f.label :subject
-						= f.text_field :subject, placeholder: 'Subject', class: 'form-control'
-					.form-group
-						= f.label :message
-						= f.text_area :message, rows: 3, class: 'form-control'
-
-					= f.submit 'Send', class: 'btn btn-lg btn-red'
-
-
-			.col-sm-4
+						.form-field-wrapper
+							%input#form-name.input-sm.form-full{:name => "form-name", :placeholder => "Your Name", :required => "", :type => "text"}/
+						.form-field-wrapper
+							= f.email_field :email, id: 'form-email', :placeholder => "Email", required: true, class: 'input-sm form-full'
+						.form-field-wrapper
+							= f.text_field :subject, id: 'form-subject', :placeholder => "Subject", class: 'input-sm form-full'
+						.form-field-wrapper
+							= f.text_area :message, id: 'form-message', :placeholder => "Your Message", :required => true, rows: 7, class: 'form-full'
+						%button#form-submit.btn.btn-md.btn-black.form-full{:name => "submit", :type => "submit"} Send Message
+					/ END Contact FORM
+	/ Contact Section
+	/ End CONTENT ----------------------------------------------------------------------------

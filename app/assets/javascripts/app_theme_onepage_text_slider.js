@@ -31,3 +31,5 @@
 // https://maps.googleapis.com/maps/api/js?sensor=false
 //= require app_theme/theme/onepage/js/map.js
 //= require app_theme/theme/onepage/js/theme.js
+//= require app_theme/custom/onepage.js
+//= require app_theme/custom/theme.js

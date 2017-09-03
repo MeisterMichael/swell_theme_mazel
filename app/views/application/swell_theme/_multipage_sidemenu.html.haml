@@ -4,31 +4,30 @@
 		%i.ion.ion-android-close
 	%h5.white Sign In
 	.sign-in
-		%input#email.input-sm.form-full{"aria-required" => "true", :name => "email", :placeholder => "Email", :type => "email", :value => ""}/
-		%input#password.input-sm.form-full{"aria-required" => "true", :name => "password", :placeholder => "Password", :type => "password", :value => ""}/
-		%input.btn.btn-md.btn-color-b.form-full{:type => "submit", :value => "Sign In"}/
-		%a New Customer?
+		= form_for User.new, as: 'user', url: swell_media.user_session_path(), role: :form do |f|
+			= f.text_field :login, id: 'email', autofocus: true, placeholder: "Email", class: 'input-sm form-full', required: true, "aria-required" => "true"
+			= f.password_field :password, id: 'password', placeholder: "password", class: 'input-sm form-full', required: true, "aria-required" => "true"
+			-# = f.check_box :remember_me, checked: true
+
+			-# %a.btn.btn-primary.btn-facebook.col-xs-12.auth-pop{ href: main_app.user_facebook_omniauth_authorize_path( ga_client_id: ':ga_client_id' ) }
+				%i.fa.fa-facebook
+				Facebook
+			%input.btn.btn-md.btn-color-b.form-full{:type => "submit", :value => "Sign In"}/
+		%a{ href: swell_media.new_user_registration_path() } New Member?
+		-# %a{ href: "/forgot" } Forgot Password?
 	%ul
 		%li
-			%a.all-demos-link{:href => "../demo.html", :target => "_blank"} Main Demo Page
+			%a{:href => swell_media.root_path() } Home
+		-# %li
+			%a{:href => swell_media.new_user_registration_path() } Login Signup
 		%li
-			%a{:href => "home.html"} Home Default
+			%a{:href => '/faq'} FAQ
 		%li
-			%a{:href => "portfolio-grid-2col.html"} Portfolio
+			%a{:href => '/about'} About
 		%li
-			%a{:href => "login-register.html"} Login	Signup
+			%a{:href => swell_media.articles_path()} Blog
+		-# %li
+			%a{:href => "/cart"} Shopping Cart
 		%li
-			%a{:href => "faq-1.html"} FAQ
-		%li
-			%a{:href => "about-1.html"} About
-		%li
-			%a{:href => "service-1.html"} Service
-		%li
-			%a{:href => "blog-grid-3col.html"} Blog
-		%li
-			%a{:href => "404-error-1.html"} 404 Error
-		%li
-			%a{:href => "shop-checkout.html"} Shopping Cart
-		%li
-			%a{:href => "contact-1.html"} Contact Us
+			%a{:href => swell_media.new_contact_path() } Contact Us
 / End Sidemenu

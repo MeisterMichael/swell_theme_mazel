@@ -11,14 +11,19 @@
  * file per style scope.
  *
 
-  *= require app_theme/custom/general/css/style.css
-  *= require app_theme/theme/general/css/bootstrap.css
-  *= require app_theme/theme/general/css/font-awesome.css
-  *= require app_theme/theme/general/css/ionicons.css
-  *= require app_theme/theme/general/css/plugin/sidebar-menu.css
-  *= require app_theme/theme/general/css/plugin/animate.css
-  *= require app_theme/theme/general/css/jquery-ui.css
-  *= require app_theme/custom/app
+ *= require app_theme/custom/general/css/style.css
+ *= require app_theme/theme/general/css/bootstrap.css
+ *= require app_theme/theme/general/css/font-awesome.css
+ *= require app_theme/theme/general/css/ionicons.css
+ *= require app_theme/theme/general/css/plugin/sidebar-menu.css
+ *= require app_theme/theme/general/css/plugin/animate.css
+ *= require app_theme/theme/general/css/jquery-ui.css
+ *= require swell_media/froala/css/froala_editor
+ *= require swell_media/froala/css/froala_style
+ *= require swell_media/froala/css/plugins/image
+ *= require swell_media/froala/css/plugins/table
+ *= require swell_media/froala/css/plugins/video
+ *= require app_theme/custom/app
 
 
  *= require app_theme/custom/app

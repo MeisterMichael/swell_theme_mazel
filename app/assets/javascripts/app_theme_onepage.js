@@ -40,3 +40,4 @@
 //= require app_theme/theme/onepage/rs-plugin/js/jquery.themepunch.revolution.min.js
 //= require app_theme/theme/onepage/js/plugins/jquery.appear.js
 //= require app_theme/custom/onepage.js
+//= require app_theme/custom/theme.js
