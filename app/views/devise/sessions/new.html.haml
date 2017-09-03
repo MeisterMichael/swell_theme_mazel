@@ -16,7 +16,7 @@
 			.col-md-6
 				.border-box
 					%h4 Already registered?
-					= form_for resource, as: resource_name, url: swell_media.user_session_path(), role: :form do |f|
+					= form_for resource, as: resource_name, url: main_app.user_session_path(), role: :form do |f|
 
 
 						.form-field-wrapper
@@ -29,7 +29,7 @@
 						%button#form-submit.btn.btn-md.btn-black{:name => "submit", :type => "submit"} Sign In
 						.float-right
 							%a{ href: '/forgot' } Forgot password?
-							-# %a{ href: swell_media.new_user_registration_path() } Create an account
+							-# %a{ href: main_app.new_user_registration_path() } Create an account
 			.col-md-6
 				.border-box
 					%h4 Create an account

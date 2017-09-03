@@ -1,0 +1,9 @@
+
+- unless flash.nil? || flash.empty?
+	- flash.each do |key, value|
+		- next if value.blank?
+		.alert.alert-dismissable{ class: "alert-#{key}" }
+			%button.close{ type: "button", 'aria-hidden' => true, data: { dismiss: "alert" } }
+				&times;
+			%span.alert-body
+				= raw value
