@@ -10,11 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require app_theme/theme/general/css/font-awesome.css
+ * app_theme/theme/general/css/font-awesome.css
  *= require app_theme/theme/general/css/jquery-ui.css
 
  *= require app_theme/theme/onepage/css/style.css
- *= require app_theme/theme/onepage/css/fontAwesome_icon_font.css
+ * app_theme/theme/onepage/css/fontAwesome_icon_font.css
  *= require app_theme/theme/onepage/css/linea_icon_font.css
  *= require app_theme/theme/onepage/css/plugins/owl.carousel.css
  *= require app_theme/theme/onepage/css/plugins/jquery.fs.tipper.css
