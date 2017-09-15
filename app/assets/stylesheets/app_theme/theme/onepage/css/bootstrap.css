@@ -5578,21 +5578,17 @@ button.close {
 }
 
 @supports ((-webkit-transform: translate3d(0, 0, 0)) or (transform: translate3d(0, 0, 0))) {
-    .carousel-item{
-
+    .carousel-item {
+	    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+	    transition: -webkit-transform 0.6s ease-in-out;
+	    -o-transition: -o-transform 0.6s ease-in-out;
+	    transition: transform 0.6s ease-in-out;
+	    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	    -webkit-perspective: 1000px;
+	    perspective: 1000px;
 	}
-
-{
-    -webkit-transition: -webkit-transform 0.6s ease-in-out;
-    transition: -webkit-transform 0.6s ease-in-out;
-    -o-transition: -o-transform 0.6s ease-in-out;
-    transition: transform 0.6s ease-in-out;
-    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-}
 
 }
 
