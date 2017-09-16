@@ -14,7 +14,7 @@
  *= require app_theme/custom/general/css/style.css
  *= require app_theme/theme/general/css/bootstrap.css
  * app_theme/theme/general/css/font-awesome.css
- *= require app_theme/theme/general/css/ionicons.css
+ *= require app_theme/custom/general/css/ionicons.css
  *= require app_theme/theme/general/css/plugin/sidebar-menu.css
  *= require app_theme/theme/general/css/plugin/animate.css
  *= require app_theme/theme/general/css/jquery-ui.css
