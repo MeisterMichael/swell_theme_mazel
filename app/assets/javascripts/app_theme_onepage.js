@@ -10,9 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
 //= require app_theme/theme/onepage/js/jquery-1.11.2.min.js
 //= require app_theme/theme/general/js/plugin/jquery.easing.js
 //= require app_theme/theme/general/js/jquery-ui.min.js
